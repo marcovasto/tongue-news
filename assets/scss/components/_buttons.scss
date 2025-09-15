@@ -1,0 +1,21 @@
+@use '../base/variables' as v;
+
+.button-custom {
+	display: inline-block;
+	padding: 0.75rem 1.5rem;
+	font-weight: v.$font-bold;
+	font-family: v.$font-primary;
+	color: white;      // colore testo di default
+	background: v.$color-primary;   // sfondo di default
+	border: none;
+	border-radius: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	transition: background 0.3s ease, color 0.3s ease;
+
+	&:hover {
+		color: v.$color-primary;      // testo diventa colore primario
+		background: v.$color-secondary; // sfondo diventa colore secondario
+	}
+}

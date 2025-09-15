@@ -1,0 +1,45 @@
+@use '../base/variables' as v;
+
+.social-stack {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem; // spazio verticale tra i cerchi
+	z-index: 9999;
+
+	.social-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+        border: 2px solid transparent;
+		border-radius: 50%;
+		font-size: 1.5rem;
+		text-decoration: none;
+		transition: all 0.3s ease;
+
+        i {
+            color: white;
+        }
+
+		&:hover {
+			background-color: v.$color-tertiary;
+            border-color: v.$color-primary;
+
+            i {
+                color: v.$color-primary;
+            }
+		}
+	}
+
+	.github {
+		background-color: #333;
+	}
+
+	.linkedin {
+		background-color: #0077B5;
+	}
+}

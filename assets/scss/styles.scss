@@ -1,0 +1,17 @@
+// Base styles
+@use 'base/reset';
+@use 'base/variables';
+@use 'base/mixin';
+
+// Typography styles
+@use 'typography/typography';
+
+// Layout styles
+@use 'layouts/global';
+
+// Component styles
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/header';
+@use 'components/social';
+//@use 'layouts/navbar';
