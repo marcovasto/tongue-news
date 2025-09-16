@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Almendra+SC&family=REM:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
 *,
 *::before,
 *::after {
@@ -59,44 +60,6 @@ main {
   background-color: #F2F4F3;
 }
 
-#news-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.news-card {
-  background-color: #f9f9f9;
-  padding: 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.news-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.news-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #183153;
-  margin-bottom: 0.5rem;
-  text-decoration: none;
-}
-.news-title:hover {
-  text-decoration: underline;
-}
-
-.news-date {
-  font-size: 18px;
-  color: #555;
-}
-
 .button-custom {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -114,6 +77,56 @@ main {
 .button-custom:hover {
   color: #183153;
   background: #F2F4F3;
+}
+
+#news-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.news-card {
+  background-color: #f9f9f9;
+  padding: 0rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+.news-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.news-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #183153;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  padding: 1rem;
+}
+.news-title:hover {
+  text-decoration: underline;
+}
+
+.news-date {
+  font-size: 18px;
+  color: #555;
+  padding: 0 1rem;
+}
+
+.news-img {
+  width: 100%;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .social-stack {
