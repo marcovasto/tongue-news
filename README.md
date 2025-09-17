@@ -1,37 +1,35 @@
-# Marco Vasto Portfolio - Frontend Developer
+# TONGUE NEWS - JAVASCRIPT PROJECT
 
-This portfolio website showcases the skills and projects I’ve developed throughout my journey as a Frontend Developer. The website was created as part of a hands-on project during my master’s program at start2impact, where I explored various web development technologies, including HTML, CSS, SASS, Bootstrap, and GitHub.
-
-The website reflects my commitment to modern, high-quality web development. It features a clean, user-friendly design and is optimized for both desktop and mobile devices. It demonstrates practical application of responsive design, ensuring a seamless experience across all screen sizes, along with a meticulous focus on pixel-perfect spacing for a polished and visually consistent layout.
-
-## 🌐 Live Preview
-
-Here you can find a live preview of [my portfolio](https://marcovasto.github.io/PersonalSite/)
-
-## ⚙️ Technologies Used
-
-- **HTML5**: Structure and semantic layout
-- **CSS3**: Styling and layout design, using SASS for better scalability
-- **JavaScript**: Used for EmailJS integration to handle form submissions
-- **Bootstrap**: Responsive grid and components
-- **GitHub**: Version control and deployment via GitHub Pages
+Questo progetto fa parte del mio percorso di studi e nasce come esercizio pratico: l’obiettivo era sviluppare una **webapp** per un’azienda fittizia chiamata *Tongue News*.  
+Il punto chiave del progetto è l’integrazione con l’**API di Hacker News**, utilizzata per mostrare un flusso dinamico di notizie.  
 
 ## ✨ Features
 
-- **Responsive Design**: The website adapts seamlessly across different screen sizes
-- **Contact Form**: A functional contact form using EmailJS for easy communication
-- **Curriculum**: Showcase of my professional experience and technical skills
-- **Social Media Integration**: Open Graph meta tags to enhance sharing on social platforms
-- **Modern UI**: Clean, user-friendly interface built with custom styles and Bootstrap
+- Recupero di **500 news** tramite API Hacker News  
+- Visualizzazione iniziale di **10 news** per non appesantire il caricamento  
+- Creazione di un **bottone “Load More”** per caricare ulteriori 10 news alla volta  
+- Gestione semplificata e chiara dei contenuti, con un layout minimale  
+
+## 🌐 Live Preview
+
+👉 [Guarda la live preview qui](LINK_DELLA_PREVIEW)
+
+## ⚙️ Technologies Used
+
+- **HTML5** → Struttura e semantica del sito
+- **CSS3 + SASS** → Gestione modulare dei componenti, variabili per lo stile e supporto al tema chiaro/scuro  
+- **JavaScript** → Chiamata API, gestione dinamica dei contenuti e interazioni utente  
+- **GitHub** → Version control e hosting del progetto tramite GitHub Pages
 
 ## 🌳 Project Structure
+
 ```
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
 │   ├── images/
 │   ├── js/
-│   │   └── contact-form.js
+│   │   └── app.js
 │   └── scss/
 │       ├── base/
 │       │   ├── _mixin.scss
@@ -40,18 +38,15 @@ Here you can find a live preview of [my portfolio](https://marcovasto.github.io/
 │       ├── components/
 │       │   ├── _buttons.scss
 │       │   ├── _cards.scss
-│       │   ├── _contact-form.scss
 │       │   ├── _header.scss
-│       │   └── _logos.scss
+│       │   ├── _navbar.scss
+│       │   └── _social.scss
 │       ├── layouts/
 │       │   ├── _global.scss
-│       │   ├── _layout.scss
-│       │   └── _navbar.scss
 │       └── typography/
-│           └── _styles.scss
+│       │   └── _typography.scss
+│       └── styles.scss
 ├── .gitignore
-├── contact-me.html
-├── curriculum-vitae.html
 ├── index.html
-├── readme.md
+└── README.md
 ```

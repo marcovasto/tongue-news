@@ -26,11 +26,11 @@
         }
 
 		&:hover {
-			background-color: v.$color-tertiary;
-            border-color: v.$color-primary;
+			background-color: var(--color-tertiary);;
+            border-color: var(--color-primary);;
 
             i {
-                color: v.$color-primary;
+                color: var(--color-primary);;
             }
 		}
 	}
@@ -41,5 +41,9 @@
 
 	.linkedin {
 		background-color: #0077B5;
+	}
+
+	.color-theme {
+		background-color: v.$color-quaternary;
 	}
 }

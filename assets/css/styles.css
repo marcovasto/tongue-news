@@ -8,11 +8,18 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #183153;
+  --color-secondary: #F2F4F3;
+  --color-tertiary: #e0e7ff;
+  --color-quaternary: #FFA500;
+}
+
 * {
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: 400;
-  color: #183153;
+  color: var(--color-primary);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,7 +44,7 @@ p {
 
 html {
   scroll-behavior: smooth;
-  background-color: #e0e7ff;
+  background-color: var(--color-tertiary);
 }
 
 .section {
@@ -57,7 +64,7 @@ html {
 
 main {
   border-radius: 2rem 2rem 0 0;
-  background-color: #F2F4F3;
+  background-color: var(--color-secondary);
 }
 
 .button-custom {
@@ -65,18 +72,22 @@ main {
   padding: 0.75rem 1.5rem;
   font-weight: 800;
   font-family: "Roboto", sans-serif;
-  color: white;
-  background: #183153;
+  color: var(--color-secondary);
+  background: var(--color-primary);
   border: none;
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 .button-custom:hover {
-  color: #183153;
-  background: #F2F4F3;
+  background: #FFA500;
+}
+
+.button-custom {
+  display: block;
+  margin: 0 auto;
 }
 
 #news-container {
@@ -129,6 +140,23 @@ main {
   margin-bottom: 1rem;
 }
 
+header {
+  position: relative;
+}
+header .hero-video {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+  opacity: 45%;
+}
+header p {
+  text-align: justify;
+  font-weight: 600;
+}
+
 .social-stack {
   position: fixed;
   bottom: 1rem;
@@ -154,15 +182,23 @@ main {
   color: white;
 }
 .social-stack .social-btn:hover {
-  background-color: #e0e7ff;
-  border-color: #183153;
+  background-color: var(--color-tertiary);
+  border-color: var(--color-primary);
 }
 .social-stack .social-btn:hover i {
-  color: #183153;
+  color: var(--color-primary);
 }
 .social-stack .github {
   background-color: #333;
 }
 .social-stack .linkedin {
   background-color: #0077B5;
+}
+.social-stack .color-theme {
+  background-color: #FFA500;
+}
+
+nav img {
+  height: 80px;
+  width: auto;
 }

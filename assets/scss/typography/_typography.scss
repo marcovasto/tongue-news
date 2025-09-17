@@ -8,7 +8,7 @@
     font-family: v.$font-primary;
     font-size: v.$font-size-medium;
     font-weight: v.$font-regular;
-    color: v.$color-primary;
+    color: var(--color-primary);;
 }
 
 h1,h2,h3,h4,h5,h6 {
