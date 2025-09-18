@@ -151,9 +151,9 @@ btn.addEventListener('click', () => {
 	active = !active;
 
 	if (active) {
-		document.documentElement.style.setProperty('--color-primary', 'white');
-		document.documentElement.style.setProperty('--color-secondary', '#141414');
-		document.documentElement.style.setProperty('--color-tertiary', '#183153');
+		document.documentElement.style.setProperty('--color-primary', '#F2F4F3');
+		document.documentElement.style.setProperty('--color-secondary', '#121212');
+		document.documentElement.style.setProperty('--color-tertiary', '#1E1E1E');
 	} else {
 		document.documentElement.style.setProperty('--color-primary', '#183153');
 		document.documentElement.style.setProperty('--color-secondary', '#F2F4F3');
