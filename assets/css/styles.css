@@ -50,7 +50,6 @@ html {
 .section {
   width: 100%;
   margin: auto;
-  max-width: 1200px;
 }
 .section .content-section {
   max-width: 1000px;
@@ -66,6 +65,9 @@ html {
 main {
   border-radius: 2rem 2rem 0 0;
   background-color: var(--color-secondary);
+}
+main i {
+  color: var(--color-secondary);
 }
 
 .button-custom {
@@ -89,6 +91,47 @@ main {
 .button-custom {
   display: block;
   margin: 0 auto;
+}
+
+.utility-group {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 9999;
+}
+.utility-group .utility-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.utility-group .utility-btn i {
+  color: white;
+}
+.utility-group .utility-btn:hover {
+  background-color: var(--color-tertiary);
+  border-color: var(--color-primary);
+}
+.utility-group .utility-btn:hover i {
+  color: var(--color-primary);
+}
+.utility-group .github {
+  background-color: #333;
+}
+.utility-group .linkedin {
+  background-color: #0077B5;
+}
+.utility-group .color-theme {
+  background-color: #FFA500;
 }
 
 #news-container {
@@ -141,10 +184,11 @@ main {
   margin-bottom: 1rem;
 }
 
-header {
+.hero-section {
   position: relative;
+  justify-items: center;
 }
-header .hero-video {
+.hero-section .hero-video {
   position: absolute;
   width: 100% !important;
   height: 150%;
@@ -153,53 +197,18 @@ header .hero-video {
   z-index: -1;
   opacity: 45%;
 }
-header p {
+.hero-section h1 {
+  font-size: 80px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 0.9;
+}
+.hero-section h2 {
+  font-size: 18px;
+  text-align: center;
+}
+.hero-section p {
   text-align: justify;
   font-weight: 600;
-}
-
-.icon-stack {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  z-index: 9999;
-}
-.icon-stack .icon-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 2px solid transparent;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.icon-stack .icon-btn i {
-  color: white;
-}
-.icon-stack .icon-btn:hover {
-  background-color: var(--color-tertiary);
-  border-color: var(--color-primary);
-}
-.icon-stack .icon-btn:hover i {
-  color: var(--color-primary);
-}
-.icon-stack .github {
-  background-color: #333;
-}
-.icon-stack .linkedin {
-  background-color: #0077B5;
-}
-.icon-stack .color-theme {
-  background-color: #FFA500;
-}
-
-nav img {
-  height: 80px;
-  width: auto;
 }

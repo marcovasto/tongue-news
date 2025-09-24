@@ -3,13 +3,13 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--color-tertiary);;
+    background-color: var(--color-tertiary);
 }
 
 .section {
 	width: 100%;
 	margin: auto;
-	max-width: 1200px;
+	// max-width: 1200px;
 
 	.content-section {
 		max-width: 1000px;
@@ -25,4 +25,8 @@ html {
 main {
     border-radius: 2rem 2rem 0 0;
     background-color: var(--color-secondary);
+
+	i {
+		color: var(--color-secondary);
+	}
 }
