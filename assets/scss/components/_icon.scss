@@ -1,6 +1,6 @@
 @use '../base/variables' as v;
 
-.social-stack {
+.icon-stack {
 	position: fixed;
 	bottom: 1rem;
 	right: 1rem;
@@ -9,7 +9,7 @@
 	gap: 0.5rem; // spazio verticale tra i cerchi
 	z-index: 9999;
 
-	.social-btn {
+	.icon-btn {
 		display: flex;
 		align-items: center;
 		justify-content: center;

@@ -1,25 +1,25 @@
 # TONGUE NEWS - JAVASCRIPT PROJECT
 
-Questo progetto fa parte del mio percorso di studi e nasce come esercizio pratico: l’obiettivo era sviluppare una **webapp** per un’azienda fittizia chiamata *Tongue News*.  
-Il punto chiave del progetto è l’integrazione con l’**API di Hacker News**, utilizzata per mostrare un flusso dinamico di notizie.  
+This project is part of my study program and was created as a practical exercise: the goal was to develop a webapp for a fictional company called **Tongue News**.
+The key point of the project is the integration with the **Hacker News API**, used to display a dynamic stream of news.
 
 ## ✨ Features
 
-- Recupero di **500 news** tramite API Hacker News  
-- Visualizzazione iniziale di **10 news** per non appesantire il caricamento  
-- Creazione di un **bottone “Load More”** per caricare ulteriori 10 news alla volta  
-- Gestione semplificata e chiara dei contenuti, con un layout minimale  
+- Retrieval of **500 news** items via the Hacker News API
+- Initial display of **10 news** to keep loading light
+- Creation of a **“Load More” button** to load an additional 10 news at a time
+- Simplified and clear content management, with a minimal layout
 
 ## 🌐 Live Preview
 
-👉 [Guarda la live preview qui](LINK_DELLA_PREVIEW)
+👉 [Check out the live preview here](https://marcovasto.github.io/tongue-news/)
 
 ## ⚙️ Technologies Used
 
-- **HTML5** → Struttura e semantica del sito
-- **CSS3 + SASS** → Gestione modulare dei componenti, variabili per lo stile e supporto al tema chiaro/scuro  
-- **JavaScript** → Chiamata API, gestione dinamica dei contenuti e interazioni utente  
-- **GitHub** → Version control e hosting del progetto tramite GitHub Pages
+- **HTML5:** Site structure and semantics
+- **CSS3 + SASS:** Modular component management, style variables, and support for light/dark theme  
+- **JavaScript:** API calls, dynamic content management, and user interactions  
+- **GitHub:** Version control and project hosting through GitHub Pages
 
 ## 🌳 Project Structure
 
@@ -42,8 +42,8 @@ Il punto chiave del progetto è l’integrazione con l’**API di Hacker News**,
 │       │   ├── _navbar.scss
 │       │   └── _social.scss
 │       ├── layouts/
-│       │   ├── _global.scss
-│       └── typography/
+│       │   └── _global.scss
+│       ├── typography/
 │       │   └── _typography.scss
 │       └── styles.scss
 ├── .gitignore
