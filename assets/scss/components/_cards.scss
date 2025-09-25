@@ -1,6 +1,6 @@
 @use '../base/variables' as v;
 
-// news container
+// News container
 
 #news-container {
 	display: grid;
@@ -10,7 +10,7 @@
 }
 
 .news-card {
-	background-color: #f9f9f9;  // sfondo chiaro per distinguere le card
+	background-color: #f9f9f9;
 	padding: 0rem;
 	border-radius: 20px;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.05);

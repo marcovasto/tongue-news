@@ -13,10 +13,10 @@ html {
 	.content-section {
 		max-width: 1000px;
 		margin: 0 auto;
-		padding: 4rem 1rem; // mobile
+		padding: 4rem 1rem; // Mobile
 
 		@include m.desktop-breakpoint {
-			padding: 10rem 2rem; // desktop
+			padding: 10rem 2rem; // Desktop
 		}
 	}
 }

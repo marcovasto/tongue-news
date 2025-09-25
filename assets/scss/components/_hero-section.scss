@@ -7,7 +7,7 @@
     .hero-video {
         position: absolute;
         width: 100% !important;
-        height: 150%;
+        height: 130%; // Different from width, to occupy the space behind the top left and top right main's corners
         object-fit: cover;
         z-index: -1;
         opacity: 45%;

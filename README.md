@@ -38,7 +38,7 @@ The key point of the project is the integration with the **Hacker News API**, us
 │       ├── components/
 │       │   ├── _buttons.scss
 │       │   ├── _cards.scss
-│       │   └──_hero-section.scss
+│       │   └── _hero-section.scss
 │       ├── layouts/
 │       │   └── _global.scss
 │       ├── typography/

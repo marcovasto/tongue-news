@@ -5,8 +5,8 @@
 	padding: 0.75rem 1.5rem;
 	font-weight: v.$font-bold;
 	font-family: v.$font-primary;
-	color: var(--color-primary);      // colore testo di default SECONDARY
-	background:  var(--color-secondary);   // sfondo di default
+	color: var(--color-primary);
+	background:  var(--color-secondary);
 	border: 1px solid var(--color-primary);
 	border-radius: 20px;
 	cursor: pointer;
@@ -15,7 +15,7 @@
 	transition: background-color 0.3s ease;
 
 	&:hover {
-		background: v.$color-tertiary; // sfondo diventa colore secondario
+		background: v.$color-tertiary;
 	}
 
 	i {
@@ -29,7 +29,7 @@
 	margin: 0 auto;
 }
 
-// utility button styles
+// Utility button styles
 
 .utility-group {
 	position: fixed;
@@ -37,7 +37,7 @@
 	right: 1rem;
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem; // spazio verticale tra i cerchi
+	gap: 0.5rem;
 	z-index: 9999;
 
 	.utility-btn {

@@ -208,7 +208,7 @@ footer p {
 .hero-section .hero-video {
   position: absolute;
   width: 100% !important;
-  height: 150%;
+  height: 130%;
   -o-object-fit: cover;
      object-fit: cover;
   z-index: -1;
