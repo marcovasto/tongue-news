@@ -8,8 +8,7 @@ html {
 
 .section {
 	width: 100%;
-	margin: auto;
-	// max-width: 1200px;
+	margin: 0 auto;
 
 	.content-section {
 		max-width: 1000px;
@@ -28,5 +27,20 @@ main {
 
 	i {
 		color: var(--color-secondary);
+	}
+}
+
+footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: uppercase;
+
+	p {
+		margin: 2rem 2rem;
+		text-align: center;
+		font-weight: 300;
+		line-height: 1;
+		text-transform: capitalize;
 	}
 }

@@ -5,9 +5,9 @@
 	padding: 0.75rem 1.5rem;
 	font-weight: v.$font-bold;
 	font-family: v.$font-primary;
-	color: var(--color-secondary);      // colore testo di default
-	background:  var(--color-primary);   // sfondo di default
-	border: none;
+	color: var(--color-primary);      // colore testo di default SECONDARY
+	background:  var(--color-secondary);   // sfondo di default
+	border: 1px solid var(--color-primary);
 	border-radius: 20px;
 	cursor: pointer;
 	text-decoration: none;
@@ -15,7 +15,12 @@
 	transition: background-color 0.3s ease;
 
 	&:hover {
-		background: v.$color-quaternary; // sfondo diventa colore secondario
+		background: v.$color-tertiary; // sfondo diventa colore secondario
+	}
+
+	i {
+		color: var(--color-primary);
+		padding-right: 0.3rem;
 	}
 }
 

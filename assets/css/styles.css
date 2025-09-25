@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap");
 *,
 *::before,
 *::after {
@@ -49,7 +48,7 @@ html {
 
 .section {
   width: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 .section .content-section {
   max-width: 1000px;
@@ -70,14 +69,28 @@ main i {
   color: var(--color-secondary);
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+footer p {
+  margin: 2rem 2rem;
+  text-align: center;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
 .button-custom {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font-weight: 800;
   font-family: "Roboto", sans-serif;
-  color: var(--color-secondary);
-  background: var(--color-primary);
-  border: none;
+  color: var(--color-primary);
+  background: var(--color-secondary);
+  border: 1px solid var(--color-primary);
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
@@ -85,7 +98,11 @@ main i {
   transition: background-color 0.3s ease;
 }
 .button-custom:hover {
-  background: #FFA500;
+  background: #e0e7ff;
+}
+.button-custom i {
+  color: var(--color-primary);
+  padding-right: 0.3rem;
 }
 
 .button-custom {
