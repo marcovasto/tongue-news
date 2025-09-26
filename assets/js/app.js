@@ -43,6 +43,7 @@ function createNewsCard(item) {
 	const title = document.createElement('a');
 	title.href = item.url;
 	title.target = '_blank';
+	title.rel = 'noopener';
 	title.textContent = item.title;
 	title.className = 'news-title';
 	card.appendChild(title);
