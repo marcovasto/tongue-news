@@ -5,10 +5,11 @@ The key point of the project is the integration with the **Hacker News API**, us
 
 ## ✨ Features
 
-- Retrieval of **500 news** items via the Hacker News API
-- Initial display of **10 news** to keep loading light
-- Creation of a **“Load More” button** to load an additional 10 news at a time
-- Simplified and clear content management, with a minimal layout
+- **Dynamic Fetching:** Retrieval of news items via the **Hacker News API** using **Axios**.
+- **Batch Loading:** Initial display of 10 news with a **"Load More"** system to handle data efficiently.
+- **UX Feedback:** Visual loading state (spinner) and button disabling during API calls.
+- **Theme Switcher:** Full support for **Light/Dark Mode** with optimized color contrasts for accessibility.
+- **Data Security:** Sanitization of API content using **Lodash** (`_.escape`) to prevent XSS vulnerabilities.
 
 ## 🌐 Live Preview
 
@@ -16,10 +17,12 @@ The key point of the project is the integration with the **Hacker News API**, us
 
 ## ⚙️ Technologies Used
 
-- **HTML5:** Site structure and semantics
-- **CSS3 + SASS:** Modular component management, style variables, and support for light/dark theme  
-- **JavaScript:** API calls, dynamic content management, and user interactions  
-- **GitHub:** Version control and project hosting through GitHub Pages
+- **HTML5 & CSS3:** Semantic structure and advanced styling.
+- **SASS (SCSS):** Modular management of components, variables, and themes.
+- **JavaScript (ES6+):** Asynchronous logic and DOM manipulation.
+- **Vite:** Next-generation frontend tooling for bundling and development.
+- **Axios:** Promise-based HTTP client for the browser.
+- **Lodash:** Utility library for data consistency and security.
 
 ## 🌳 Project Structure
 
@@ -44,7 +47,12 @@ The key point of the project is the integration with the **Hacker News API**, us
 │       ├── typography/
 │       │   └── _typography.scss
 │       └── styles.scss
+├── dist/
+├── node_modules/
 ├── .gitignore
 ├── index.html
-└── README.md
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
 ```
