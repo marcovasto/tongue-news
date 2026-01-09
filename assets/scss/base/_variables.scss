@@ -15,10 +15,16 @@ $color-secondary: #F2F4F3;
 $color-tertiary: #e0e7ff;
 $color-quaternary: #FFA500;
 
-// Needed for white/black themes
+// Default light theme
 :root {
-	--color-primary: #183153;
-	--color-secondary: #F2F4F3;
-	--color-tertiary: #e0e7ff;
-	--color-quaternary: #FFA500;
+  --color-primary: #183153;
+  --color-secondary: #F2F4F3;
+  --color-tertiary: #e0e7ff;
+}
+
+// Dark theme
+body[data-theme="dark"] {
+  --color-primary: #FFA500;
+  --color-secondary: #121212;
+  --color-tertiary: #1E1E1E;
 }

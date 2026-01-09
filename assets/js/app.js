@@ -1,93 +1,94 @@
+import axios from 'axios';
+import _ from 'lodash';
+import '../css/styles.css';
+
 const API_LIST = "https://hacker-news.firebaseio.com/v0/newstories.json";
 const BATCH_SIZE = 10;
 
 let allIds = [];
 let currentIndex = 0;
 
+// API logic (AXIOS)
 async function fetchIds() {
-	try {
-		const res = await fetch(API_LIST);
-		if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
-		allIds = await res.json();
-		loadNextBatch();
-	} catch (err) {
-		console.error('FETCH ERROR', err);
-	}
+    try {
+        const { data } = await axios.get(API_LIST);
+        allIds = data;
+        loadNextBatch();
+    } catch (err) {
+        console.error('Errore nel recupero ID:', err);
+    }
 }
 
 async function fetchDetails(ids) {
-	const promises = ids.map(id =>
-		fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-			.then(r => r.ok ? r.json() : null)
-			.catch(() => null)
-	);
-	const raw = await Promise.all(promises);
-	return raw.filter(Boolean).map(it => ({
-		id: it.id,
-		title: it.title || '(no title)',
-		url: it.url || `https://news.ycombinator.com/item?id=${it.id}`,
-		timeISO: it.time ? new Date(it.time * 1000).toISOString() : ''
-	}));
+    try {
+        const requests = ids.map(id => axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`));
+        const results = await Promise.all(requests);
+        
+        return results.map(res => {
+            const it = res.data;
+            return {
+                id: it.id,
+                title: it.title || '(nessun titolo)',
+                url: it.url || `https://news.ycombinator.com/item?id=${it.id}`,
+                time: it.time ? new Date(it.time * 1000).toLocaleString() : ''
+            };
+        });
+    } catch (err) {
+        console.error('Errore nel recupero dettagli:', err);
+        return [];
+    }
 }
 
-function createNewsCard(item) {
-	const card = document.createElement('div');
-	card.className = 'news-card';
-
-	const img = document.createElement('img');
-	img.src = `https://picsum.photos/seed/${item.id}/600/400`;
-	img.alt = item.title;
-	img.className = 'news-img';
-	card.appendChild(img);
-
-	const title = document.createElement('a');
-	title.href = item.url;
-	title.target = '_blank';
-	title.rel = 'noopener';
-	title.textContent = item.title;
-	title.className = 'news-title';
-	card.appendChild(title);
-
-	const date = document.createElement('p');
-	date.textContent = item.timeISO ? new Date(item.timeISO).toLocaleString() : '';
-	date.className = 'news-date';
-	card.appendChild(date);
-
-	return card;
-}
-
+// DOM logic (DRY)
 function renderNews(items) {
-	const container = document.getElementById('news-container');
-	items.forEach(item => container.appendChild(createNewsCard(item)));
+    const container = document.getElementById('news-container');
+    
+    const htmlCards = items.map(item => `
+        <div class="news-card">
+            <img src="https://picsum.photos/seed/${item.id}/600/400" alt="${_.escape(item.title)}" class="news-img">
+            <a href="${item.url}" target="_blank" rel="noopener" class="news-title">${_.escape(item.title)}</a>
+            <p class="news-date">${item.time}</p>
+        </div>
+    `).join('');
+
+    container.insertAdjacentHTML('beforeend', htmlCards);
 }
 
 async function loadNextBatch() {
-	if (currentIndex >= allIds.length) return;
-	const nextIds = allIds.slice(currentIndex, currentIndex + BATCH_SIZE);
-	const items = await fetchDetails(nextIds);
-	currentIndex += BATCH_SIZE;
-	renderNews(items);
+    if (currentIndex >= allIds.length) return;
+
+    const btn = document.getElementById('load-more-btn');
+    const originalContent = btn.innerHTML; 
+
+    try {
+        btn.disabled = true; 
+        btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Loading...`; 
+
+        const nextIds = allIds.slice(currentIndex, currentIndex + BATCH_SIZE);
+        const items = await fetchDetails(nextIds);
+        
+        currentIndex += BATCH_SIZE;
+        renderNews(items);
+
+    } catch (err) {
+        console.error("Loading error:", err);
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalContent;
+    }
 }
 
+// Initialization
 document.addEventListener('DOMContentLoaded', () => {
-	const btn = document.getElementById('load-more-btn');
-	if(btn) btn.addEventListener('click', loadNextBatch);
-	fetchIds();
+    const btnLoad = document.getElementById('load-more-btn');
+    if(btnLoad) btnLoad.addEventListener('click', loadNextBatch);
+    fetchIds();
 });
 
-const btn = document.querySelector('.color-theme');
-let active = false;
-
-btn.addEventListener('click', () => {
-	active = !active;
-
-	if (active) {
-		document.documentElement.style.setProperty('--color-primary', '#F2F4F3');
-		document.documentElement.style.setProperty('--color-secondary', '#121212');
-		document.documentElement.style.setProperty('--color-tertiary', '#1E1E1E');
-	} else {
-		document.documentElement.style.setProperty('--color-primary', '#183153');
-		document.documentElement.style.setProperty('--color-secondary', '#F2F4F3');
-		document.documentElement.style.setProperty('--color-tertiary', '#e0e7ff');
-	}
+// Theme switcher
+const themeBtn = document.querySelector('.color-theme');
+themeBtn.addEventListener('click', () => {
+    const currentTheme = document.body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', newTheme);
 });

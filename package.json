@@ -1,0 +1,29 @@
+{
+  "name": "tongue-news",
+  "version": "1.0.0",
+  "description": "This project is part of my study program and was created as a practical exercise: the goal was to develop a webapp for a fictional company called **Tongue News**. The key point of the project is the integration with the **Hacker News API**, used to display a dynamic stream of news.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcovasto/tongue-news.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcovasto/tongue-news/issues"
+  },
+  "homepage": "https://github.com/marcovasto/tongue-news#readme",
+  "devDependencies": {
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "lodash": "^4.17.21"
+  }
+}
